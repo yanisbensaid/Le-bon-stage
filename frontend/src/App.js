@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from './components/Navbar';
+
+const menuItems = [
+  { title: 'Accueil', link: '/' },
+  { title: 'Parents et jeunes', link: '/Parents_et_jeunes' },
+  { title: 'Entreprises et associations', link: '/Entreprises_et_associations' },
+  { title: 'Institutions et enseignants', link: '/Institutions_et_enseignants' }
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar menuItems={menuItems} />
+      {/* D'autres composants ou éléments ici */}
     </div>
   );
 }
