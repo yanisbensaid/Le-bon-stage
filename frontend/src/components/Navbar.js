@@ -53,7 +53,7 @@ const Logo = styled.img`
 const SpecialCasesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  position: absolute;
+  position: fixed;
   left: 1420px;
   top: 30px;
 `;
