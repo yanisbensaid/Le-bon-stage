@@ -54,7 +54,7 @@ const SpecialCasesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   position: fixed;
-  left: 1420px;
+  left: 1380px;
   top: 30px;
 `;
 
