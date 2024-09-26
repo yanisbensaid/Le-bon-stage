@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import LogoImage from '../assets/Logo.png';
 
 
 const NavbarContainer = styled.nav`
@@ -14,6 +15,12 @@ const NavbarContainer = styled.nav`
   background-color: rgba(0, 0, 247, 1);
   color: white;
   margin: 0;
+`;
+
+const LogoAndNavItems = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: -150px;
 `;
 
 const NavItem = styled.a`
@@ -36,16 +43,56 @@ const NavItem = styled.a`
   }
 `;
 
+const Logo = styled.img`
+    height: 60px;
+    margin-right: -150px;
+    margin-top: -20px;
+    margin-left: 100px;
+`;
+
+const SpecialCasesContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 1420px;
+  top: 30px;
+`;
+
+const Case = styled.a`
+  padding: 1rem;
+  margin-left: 0rem;
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  border-bottom: 3px solid transparent;
+  &:hover {
+    background-color: #585bfd;
+    color: #fecd3e;
+    border-bottom: 3px solid #fecd3e;
+  }
+`;
+
+
 const Navbar = ({ menuItems }) => {
   return (
     <NavbarContainer>
-      {menuItems.map((item, index) => (
-        <NavItem key={index} href={item.link}>
-          {item.title}
-        </NavItem>
-      ))}
+      <LogoAndNavItems>
+        <Logo src={LogoImage} alt="Test" />
+        {menuItems.map((item, index) => (
+          <NavItem key={index} href={item.link}>
+            {item.title}
+          </NavItem>
+        ))}
+      </LogoAndNavItems>
+
+      <SpecialCasesContainer>
+        <Case href="/signup">Créer un compte</Case>
+        <Case href="/login">Se connecter</Case>
+      </SpecialCasesContainer>
     </NavbarContainer>
   );
 };
+
+
 
 export default Navbar;
